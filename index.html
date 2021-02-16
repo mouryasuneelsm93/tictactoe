@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            background-color: #EFEFEF;
+        }
+        
+        table {
+            margin-top: 5%;
+            /* width: 50vw; */
+            /* border: 1px solid red; */
+        }
+        
+        #b1,
+        #b2,
+        #b3,
+        #b4,
+        #b5,
+        #b6,
+        #b7,
+        #b8,
+        #b9 {
+            width: 10vw;
+            border: 0px;
+            height: 20vh;
+            color: blue;
+            font-size: 2rem;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="text-center">
+            <h1 style="font-weight:bold;font-size: 40px;color:red">Tic Tac Toe</h1>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <input type="button" id="b1" onclick="Check()">
+                </td>
+                <td><input type="button" id="b2" onclick="Check1()"></td>
+                <td><input type="button" id="b3" onclick="Check2()">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="b4" onclick="Check3()"></td>
+                <td><input type="button" id="b5" onclick="Check4()"></td>
+                <td><input type="button" id="b6" onclick="Check5()">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="b7" onclick="Check6()"></td>
+                <td><input type="button" id="b8" onclick="Check7()"></td>
+                <td><input type="button" id="b9" onclick="Check8()">
+                </td>
+            </tr>
+        </table>
+</body>
+
+</html>
+<script>
+    var i = 2;
+    var arr = [];
+
+    function Check() {
+        if (i % 2 == 0) {
+            document.getElementById("b1").value = "X";
+            document.getElementById("b1").disabled = 'true';
+
+        } else {
+            document.getElementById("b1").value = "0";
+            document.getElementById("b1").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check1() {
+        if (i % 2 == 0) {
+            document.getElementById("b2").value = "X";
+            document.getElementById("b2").disabled = 'true';
+        } else {
+            document.getElementById("b2").value = "0";
+            document.getElementById("b2").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check2() {
+        if (i % 2 == 0) {
+            document.getElementById("b3").value = "X";
+            document.getElementById("b3").disabled = 'true';
+        } else {
+            document.getElementById("b3").value = "0";
+            document.getElementById("b3").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check3() {
+        if (i % 2 == 0) {
+            document.getElementById("b4").value = "X";
+            document.getElementById("b4").disabled = 'true';
+        } else {
+            document.getElementById("b4").value = "0";
+            document.getElementById("b4").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check4() {
+        if (i % 2 == 0) {
+            document.getElementById("b5").value = "X";
+            document.getElementById("b5").disabled = 'true';
+        } else {
+            document.getElementById("b5").value = "0";
+            document.getElementById("b5").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check5() {
+        if (i % 2 == 0) {
+            document.getElementById("b6").value = "X";
+            document.getElementById("b6").disabled = 'true';
+        } else {
+            document.getElementById("b6").value = "0";
+            document.getElementById("b6").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check6() {
+        if (i % 2 == 0) {
+            document.getElementById("b7").value = "X";
+            document.getElementById("b7").disabled = 'true';
+        } else {
+            document.getElementById("b7").value = "0";
+            document.getElementById("b7").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check7() {
+        if (i % 2 == 0) {
+            document.getElementById("b8").value = "X";
+            document.getElementById("b8").disabled = 'true';
+        } else {
+            document.getElementById("b8").value = "0";
+            document.getElementById("b8").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+
+    function Check8() {
+        if (i % 2 == 0) {
+            document.getElementById("b9").value = "X";
+            document.getElementById("b9").disabled = 'true';
+        } else {
+            document.getElementById("b9").value = "0";
+            document.getElementById("b9").disabled = 'true';
+        }
+        i = i + 1;
+        Code();
+    }
+    var j = 0;
+
+
+
+    function Code() {
+        for (x = 0; x < 9; x++) {
+            arr[x] = document.getElementById(`b${x+1}`).value;
+        }
+        let match = "0";
+        if (i > 10) {
+            if (arr[0] == arr[1] && arr[1] == arr[2] || arr[0] == arr[3] && arr[3] == arr[6]) {
+                match = "1";
+                console.log("match");
+            } else if (arr[3] == arr[4] && arr[4] == arr[5] || arr[1] == arr[4] && arr[4] == arr[7]) {
+                match = "1";
+                console.log("match");
+            } else if (arr[6] == arr[7] && arr[7] == arr[8] || arr[2] == arr[5] && arr[5] == arr[8]) {
+                match = "1";
+                console.log("match");
+            } else if (arr[0] == arr[4] && arr[4] == arr[8] || arr[2] == arr[4] && arr[4] == arr[6]) {
+                match = "1";
+                console.log("match");
+            } else {
+                match = "0";
+                console.log("not match");
+            }
+            if (match == "1") {
+                alert("YOU Win !");
+            } else {
+                alert("You Lost !");
+            }
+
+        }
+    }
+</script>
